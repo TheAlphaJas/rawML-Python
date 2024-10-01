@@ -6,7 +6,7 @@ RawML is a small hobby project where neural networks are implemented from scratc
 
 - **Python Folder**: Contains a Jupyter notebook where neural networks are built from scratch using only Numpy and Python's math library. This folder demonstrates how to implement fundamental components of a neural network, including layers, activation functions, optimizers, and loss functions.
   
-- **C++ Folder**: Currently empty but will contain future C++ implementations of neural network components.
+- **C++ Folder**: Currently non-existent but will contain future C++ implementations of neural network components.
 
 ### Overview of current implementations:
 
