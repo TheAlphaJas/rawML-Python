@@ -21,12 +21,15 @@ pip install numpy
 ```
 
 ### Usage Instructions
-Just clone this repository.
-In the cloned folder, create your python file, and start using away!
-(the rawML folder is essential. Copy it wherever you wish, and import from it)
+Its available on PyPI!
+```
+pip install rawML
+```
+
 
 ### Code Example
-The demo.py file shows how one can define a rML model, define the loss function, optimzer and stich it together. Model training and inference examples are also shown.
+The getting_started.ipynb will show a brief overview on rawML, and how to use it as an high level API.
+The following code is an example of the same.
 ```
 import rawML as rML
 from rawML.layers import relu, linear
