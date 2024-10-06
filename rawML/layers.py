@@ -4,16 +4,16 @@ from .backend import *
     
 class linear:
     def __init__(self, n_in, n_out):
-        self.w = randn((n_in, n_out))*sqrt(2.0/n_in) #He initialization
-        self.b = zeros((1,n_out))
+        self.w = jTensor(randn((n_in, n_out))*sqrt(2.0/n_in), None) #He initialization
+        self.b = jTensor(zeros((1,n_out)), None)
     def __call__(self,x):
-        return (np.dot(x,self.w) + self.b)
+        return jTensor(np.dot(x,self.w) + self.b)
     def get_wb(self,):
         return (self.w,self.b)
     def backprop(self,x_in,x_out):
-        x_in.gd = np.dot(x_out.gd,self.w.T)
-        self.w.gd = np.dot(x_in.T,x_out.gd)
-        self.b.gd = x_out.gd.sum(0)
+        x_in.gd = jTensor(np.dot(x_out.gd,self.w.T))
+        self.w.gd = jTensor(np.dot(x_in.T,x_out.gd))
+        self.b.gd = jTensor(x_out.gd.sum(0))
     def update_wb(self,tup):
         w_new,b_new = tup
         self.w = w_new
