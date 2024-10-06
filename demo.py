@@ -4,7 +4,6 @@ from rawML.optimizers import GDOptimizer
 from rawML.losses import MSELoss
 from sklearn.model_selection import train_test_split as tts
 
-# b = 16 #batch_size
 
 LayerList = [
     linear(100,20),
