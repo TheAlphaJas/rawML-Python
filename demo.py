@@ -11,7 +11,7 @@ LayerList = [
     linear(20,40)
 ]
 
-opt = GDOptimizer(lr = 1e-2)
+opt = GDOptimizer(lr = 5e-3)
 loss = MSELoss()
 model = rML.createModel(LayerList, opt, loss)
 
@@ -22,7 +22,7 @@ Y = rML.rand((16, 40))
 x_train, x_val, y_train, y_val = tts(X,Y,train_size=0.8)
 
 #Training
-model.train((x_train,y_train),(x_val,y_val),epochs=20,verbose_freq=5)
+model.train((x_train,y_train),(x_val,y_val),epochs=100,verbose_freq=5)
 
 #Predicting
 y = model(rML.randn([40,100]))

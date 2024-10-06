@@ -1,14 +1,27 @@
+Metadata-Version: 2.1
+Name: rawML
+Version: 0.1.0
+Summary: Yet another ML library!
+Home-page: https://github.com/TheAlphaJas/rawML-Python/
+Author: Jasmer Singh Sanjotra
+Author-email: jasmer.sanjotra@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
 # rawML
 
-rawML is a hobby project where neural networks are implemented from scratch using pure Python and Numpy, with a class-based structure to define layers, optimizers, and loss functions. The goal is to implement how neural networks work at a low level, and create a (somewhat) modular custom code framework to implement ML algorithms, without relying on high-level deep learning frameworks like TensorFlow or PyTorch.
-rawML is a hobby project where neural networks are implemented from scratch using pure Python and Numpy, with a class-based structure to define layers, optimizers, and loss functions. The goal is to implement how neural networks work at a low level, and create a (somewhat) modular custom code framework to implement ML algorithms, without relying on high-level deep learning frameworks like TensorFlow or PyTorch. In a nutshell, my lite version of PyTorch/TF, powered by NumPy.
+rawML is a small hobby project where neural networks are implemented from scratch using pure Python and Numpy, with a class-based structure to define layers, optimizers, and loss functions. The goal is to implement how neural networks work at a low level, and create a (somewhat) modular custom code framework to implement ML algorithms, without relying on high-level deep learning frameworks like TensorFlow or PyTorch.
 
 
 ### Overview of current implementations:
 
 - **Linear Layers**: Fully connected layers with He-initialization of weights.
 - **Activation Functions**: ReLU activation implemented using numpy.
-- **Custom Tensor Class**: `jTensor`, an extension of Numpy's ndarray, supports storing gradients in the `.gd` attribute.
+- **Custom Tensor Class**: `jTensor`, an extension of Numpy's ndarray, supports storing gradients in a `.gd` attribute.
 - **Optimization**: Gradient Descent Optimizer (`GDOptimizer`) is implemented with learning rate control.
 - **Loss Function**: Mean Squared Error (MSE) Loss is implemented to compute the loss during training.
 - **Model Class**: The `CreateModel` class stiches all layers together, providing methods for forward passes and training with backpropagation. I plan on making it more customizable.
@@ -65,7 +78,6 @@ There is no implementation of the concept of "batch size" which will be added ve
 An easier way to add more custom metrics will also be implemented into the model.train() method.
 Verbose control will be added
 Currently, the CreateModel class is restrictive to a sequential NN, which I plan on changing by implementing a more "functional" NN, to make more complex architectures like skip connections etc. The further aim to implement the famed UNet architecture using RawML.
-I also plan to explore GPU acceleration possibilities by migrating to CuPy instead of NumPy
 and etc...
 
 (PS, there exists an rML.about())

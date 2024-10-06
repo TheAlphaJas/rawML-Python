@@ -2,3 +2,7 @@
 /.vscode
 /.ipynb_checkpoints
 /.build
+/build
+/setup.py
+/dist
+/*.egg-info
