@@ -1,36 +1,30 @@
 import numpy as np
 from math import sqrt
-
-class jTensor(np.ndarray):
-    def __new__(cls, ip_arr, gd=None):
-        obj = np.asarray(ip_arr).view(cls).astype(np.float64)
-        obj.gd = gd
-        return obj
+from .backend import *
     
-class linearLayer:
-    def __init__(self, n_in, n_out, b):
-        self.batch_size = b
-        self.w = jTensor(np.random.randn(n_in, n_out)*sqrt(2.0/n_in)) #He initialization
-        self.b = jTensor(np.zeros((self.batch_size,n_out)))
+class linear:
+    def __init__(self, n_in, n_out):
+        self.w = randn((n_in, n_out))*sqrt(2.0/n_in) #He initialization
+        self.b = zeros((1,n_out))
     def __call__(self,x):
-        return (np.dot(x,self.w) + self.b);
+        return (np.dot(x,self.w) + self.b)
     def get_wb(self,):
         return (self.w,self.b)
     def backprop(self,x_in,x_out):
         x_in.gd = np.dot(x_out.gd,self.w.T)
         self.w.gd = np.dot(x_in.T,x_out.gd)
-        self.b.gd = x_out.gd
+        self.b.gd = x_out.gd.sum(0)
     def update_wb(self,tup):
         w_new,b_new = tup
         self.w = w_new
         self.b = b_new
     def show_wb(self,):
-        print("Weight Matrix")
+        print("Weight Matrix :-")
         print(self.w)
-        print("Bias Matrix")
+        print("Bias Matrix :-")
         print(self.b)
 
-class reluLayer:
+class relu:
     def __init__(self):
         self.w = None
         self.b = None

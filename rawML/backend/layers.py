@@ -1,13 +1,7 @@
 import numpy as np
 from math import sqrt
-
-class jTensor(np.ndarray):
-    def __new__(cls, ip_arr, gd=None):
-        obj = np.asarray(ip_arr).view(cls).astype(np.float64)
-        obj.gd = gd
-        return obj
-    
-class linearLayer:
+  
+class linear:
     def __init__(self, n_in, n_out, b):
         self.batch_size = b
         self.w = jTensor(np.random.randn(n_in, n_out)*sqrt(2.0/n_in)) #He initialization
@@ -30,7 +24,7 @@ class linearLayer:
         print("Bias Matrix")
         print(self.b)
 
-class reluLayer:
+class relu:
     def __init__(self):
         self.w = None
         self.b = None
