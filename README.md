@@ -1,7 +1,5 @@
 # rawML
-
-rawML is a hobby project where neural networks are implemented from scratch using pure Python and Numpy, with a class-based structure to define layers, optimizers, and loss functions. The goal is to implement how neural networks work at a low level, and create a (somewhat) modular custom code framework to implement ML algorithms, without relying on high-level deep learning frameworks like TensorFlow or PyTorch.
-rawML is a hobby project where neural networks are implemented from scratch using pure Python and Numpy, with a class-based structure to define layers, optimizers, and loss functions. The goal is to implement how neural networks work at a low level, and create a (somewhat) modular custom code framework to implement ML algorithms, without relying on high-level deep learning frameworks like TensorFlow or PyTorch. In a nutshell, my lite version of PyTorch/TF, powered by NumPy.
+rawML is a hobby project where neural networks are implemented from scratch using pure Python and Numpy, with a class-based structure to define layers, optimizers, and loss functions. The goal is to implement how neural networks work at a low level, and create a (somewhat) modular custom code framework to implement ML algorithms, without relying on popular high-level deep learning frameworks like TensorFlow or PyTorch. In a nutshell, my lite version of PyTorch/TF, powered by NumPy(and possibly CuPy for a GPU accelerated framework).
 
 
 ### Overview of current implementations:
